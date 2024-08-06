@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday Cutu Singh! I love you!</title>
+  <style>
+    /* General styles */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #fde9e9; 
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .card-container {
+      perspective: 1000px; 
+    }
+    .card {
+      width: 300px;
+      height: 400px;
+      position: relative;
+      transform-style: preserve-3d;
+      transition: transform 0.5s ease;
+      cursor: pointer; 
+    }
+    .card-container.opened .card {
+      transform: rotateY(-180deg); 
+    }
+    .card.front, .card.back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      background-size: cover;
+      background-position: center;
+      transform-style: preserve-3d; 
+      transform-origin: center; 
+    }
+    .card.front {
+      background-image: url('wigglytuff.jpg'); 
+      background-color: rgba(255, 255, 255, 0.8); 
+      transform: rotateY(0deg); 
+    }
+    .card.back {
+      background-image: url('wigglytuff.jpg'); 
+      background-color: rgba(255, 127, 80, 0.8); 
+      transform: rotateY(-180deg); 
+      display: none; 
+    }
+    .card-container.opened .back {
+      display: block; 
+    }
+    .animated-images {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+    }
+    .top-images {
+      display: flex;
+      justify-content: space-around;
+      width: 100%;
+    }
+    .top-images img {
+      width: 60px; 
+      height: auto;
+      margin: 10px;
+      border-radius: 10px; 
+    }
+    .mars-image img {
+      width: 100px; 
+      height: 100px; 
+      margin: 10px;
+      border-radius: 10px; 
+    }
+    .kalakaar-image img {
+      width: 100px; 
+      height: auto;
+      margin: 10px;
+      border-radius: 10px; 
+    }
+    .photo img {
+      width: 150px; 
+      height: auto;
+      margin-top: 10px; 
+      border-radius: 10px; 
+    }
+    .card-back-text {
+      margin-top: 10px; 
+    }
+  </style>
+</head>
+<body>
+  <div class="card-container" onclick="openCard()">
+    <div class="card">
+      <div class="card front">
+        <h1>Happy Birthday Baby!</h1>
+        <p>Click to open</p>
+        <div class="animated-images">
+          <div class="top-images">
+            <div class="mars-image">
+              <img src="mars.jpeg" alt="Mars Image">
+            </div>
+            <img src="macho.jpg" alt="Macho Image">
+          </div>
+          <div class="kalakaar-image">
+            <img src="kalakaar.jpg" alt="Kalakaar Image">
+          </div>
+        </div>
+      </div>
+      <div class="card back">
+        <h1>Happy Birthday to my cutucutu wigglytuff boyfriend!</h1>
+        <p>I'm so lucky to have you. I love every version of you from being an adorable baby, to a gentleman, and to the most annoying creature on earth!</p>
+        <div class="photo">
+          <img src="us.jpeg" alt="Photo of me and baby">
+        </div>
+        <p class="card-back-text">Love, Vishnu</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Script for Opening Card on Click -->
+  <script>
+    function openCard() {
+      var cardContainer = document.querySelector('.card-container');
+      cardContainer.classList.toggle('opened');
+    }
+  </script>
+</body>
+</html>
